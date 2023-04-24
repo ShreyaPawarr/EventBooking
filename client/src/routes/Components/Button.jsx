@@ -1,11 +1,20 @@
 const Button = (props) =>{
 
-    let buttonStyle="btn rounded-full bg-black text-white px-4 py-2 text-md hover:bg-white hover:text-black transition-all hover:border-solid hover:border-1.5 hover:border-black";
+    let buttonStyle="btn bg-[#4DC4A4] text-white px-4 py-2 hover:bg-black";
     if(props.type === "outline")
     {
-        buttonStyle="btn rounded-full bg-inherit border-solid border-2 border-black text-black px-4 py-2 text-md hover:bg-black hover:text-white transition-all";
+        buttonStyle="btn bg-inherit border-solid border-2 border-black text-black px-4 py-2 hover:bg-black hover:text-white transition-all";
     }
-    buttonStyle=props.width + buttonStyle;
+
+    if(props.rounded)
+    {
+        buttonStyle=buttonStyle + " " +props.rounded;
+    }
+    else
+    {
+        buttonStyle=buttonStyle + " rounded-full";
+    }
+    buttonStyle=buttonStyle + " " +props.size;
     return (
         <button className={buttonStyle}>{props.text}</button>
     )

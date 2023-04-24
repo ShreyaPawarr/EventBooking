@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+ .roboto{
+  font-family: 'Roboto Slab', serif;
+ }
+
+ .inter{
+    font-family: 'Inter', sans-serif;
+ }
+
+ .login{
+   background-image: url('./assets/login.png');
+ }
+
+ .signup{
+   background-image: url('./assets/signup.png');
+ }
