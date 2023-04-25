@@ -1,4 +1,5 @@
 import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
 import Button from "./Components/Button";
 import { Link } from "react-router-dom";
 
@@ -15,7 +16,7 @@ const SignUp=() =>{
                     <form className="flex flex-col gap-6">
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label className="text-2xl" htmlFor="email">Organisation</label>
-                            <input className="w-full border-2 border-black px-4 py-2 rounded-full focus:border-[#4DC4A4]" type="email" name="email" id="email" placeholder="Enter your org name"/>
+                            <input className="w-full border-2 border-black px-4 py-2 rounded-full focus:border-[#4DC4A4]" type="name" name="name" id="name" placeholder="Enter your org name"/>
                         </div>
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label className="text-2xl" htmlFor="email">Email</label>
@@ -36,6 +37,9 @@ const SignUp=() =>{
                     </form>
                 </div>
             </div>
+            <section id='footer'>
+                <Footer /> 
+            </section>
         </div>
     );
 }

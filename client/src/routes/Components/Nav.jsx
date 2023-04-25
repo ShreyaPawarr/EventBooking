@@ -14,7 +14,7 @@ const Nav= () =>{
             <div className="roboto flex flex-row justify-between px-10 py-4 bg-slate-200 ">
                 <h1 className="text-4xl">Evnt</h1>
                 <div className="flex flex-row gap-4 items-center h-full">
-                    <a className="hover:cursor-pointer"><h2 className="text-xl hover:decoration-solid hover:decoration-2">Team</h2></a>
+                    <a className="hover:cursor-pointer" href="#footer"><h2 className="text-xl hover:decoration-solid hover:decoration-2">Team</h2></a>
                     <Link to="login"><h2 className="text-xl">Organise</h2></Link>
                     <Link to="login"><Button text="Login" type="outline" size="text-xl"/></Link>
                 </div>
@@ -32,7 +32,7 @@ const Nav= () =>{
                         <h2 className="text-xl">Home</h2>
                     </Link>
                     <h2 className="text-xl">Events</h2>
-                    <h2 className="text-xl">Contact</h2>
+                    <a href="#footer"><h2 className="text-xl">Contact</h2></a>
                 </div>
                 <input className="rounded-full border-2 border-black px-4 py-2 focus:border-[#4DC4A4]" type="text" placeholder="Search for Events"/>
             </div>
@@ -54,7 +54,15 @@ const Nav= () =>{
         return(
             <div className="roboto flex flex-row justify-between px-10 py-4 bg-slate-200 items-center ">
                 <Link to="/"><h1 className="text-4xl">Evnt</h1></Link>
-                <Link to="login"><Button text="Organise Events" type="outline" size="text-lg" /></Link>
+                <Link to="/login"><Button text="Organise Events" type="outline" size="text-lg" /></Link>
+            </div>
+        )
+    }
+    else{
+        return (
+            <div className="roboto flex flex-row justify-between items-center px-10 py-4 bg-slate-200 ">
+                <Link to="/"><h1 className="text-4xl">Evnt</h1></Link>
+                <User/>
             </div>
         )
     }

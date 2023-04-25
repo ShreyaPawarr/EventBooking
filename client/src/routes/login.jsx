@@ -1,4 +1,5 @@
 import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
 import { Link } from "react-router-dom";
 import Button from "./Components/Button";
 
@@ -23,8 +24,8 @@ const LoginOrg= ()=>{
                                 <input className="w-full border-2 border-black px-4 py-2 rounded-full focus:border-[#4DC4A4]" type="password" name="password" id="password" placeholder="Enter your password"/>
                                 <h3 className="text-[#4DC4A4]">Forgot Password?</h3>
                             </div>
-                            <div className="flex flex-col gap-2">
-                                <Button text="Login as Organiser" size="text-xl"/>
+                            <div className="flex flex-col gap-2 w-full">
+                                <Link to="/organiser"><Button text="Login as Organiser" size="text-xl"/></Link>
                                 <h3 className="self-center">Don't have an account? <Link to="/signup"><span className="text-[#4DC4A4]">Click Here</span></Link></h3>
                             </div>
                         </form>
@@ -34,6 +35,9 @@ const LoginOrg= ()=>{
                     <h2 className="text-5xl font-medium">We can help you organize Events as Special as you want</h2>
                     <h3 className="text-2xl">We can guide you through the process, assisting from everything from budget to over all designs and solution and execution</h3>
                 </div>
+            </section>
+            <section id='footer'>
+                <Footer /> 
             </section>
         </div>
     );

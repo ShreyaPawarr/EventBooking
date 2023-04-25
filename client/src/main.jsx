@@ -13,6 +13,8 @@ import LoginUser from './routes/loginuser';
 import SignupUser from './routes/signupUser';
 import Events from './routes/events.jsx';
 import ErrorPage from "./error-page";
+import Organiser from './routes/organiser';
+import AddEvent from './routes/addEvent';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
   {
     path: "signupUser",
     element: <SignupUser />,
+  },
+  {
+    path: "organiser",
+    element: <Organiser />,
+  },
+  {
+    path: "addevent",
+    element: <AddEvent />,
   },
 ]);
 

@@ -1,3 +1,4 @@
+import Footer from "./Components/Footer";
 import Button from "./Components/Button";
 import Nav from "./Components/Nav";
 import {Link} from 'react-router-dom';
@@ -53,6 +54,9 @@ const Events= ()=>{
                         <h2 className="text-2xl font-medium">Music Shows</h2>
                     </div>
                 </div>
+            </section>
+            <section id='footer'>
+                <Footer /> 
             </section>
         </div>
     )
