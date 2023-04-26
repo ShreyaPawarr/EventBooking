@@ -1,6 +1,9 @@
+import { Link, useParams } from "react-router-dom";
 import Button from "./Button";
 
 const Event=(props) =>{
+
+    const uid= useParams();
 
     return(
         <div className="flex flex-row w-full p-5 bg-slate-100 rounded-lg gap-8">
@@ -23,7 +26,7 @@ const Event=(props) =>{
                         <h3 className="text-lg font-medium">{props.location}</h3>
                     </div>
                     <div className="flex gap-2">
-                        <Button text="Modify" size="text-xl" type="outline"/>
+                        <Link to={"/addEvent/:"+uid.id}><Button text="Modify" size="text-xl" type="outline"/></Link>
                         <Button text="Delete" size="text-xl" type="outline"/>
                     </div>
                 </div>

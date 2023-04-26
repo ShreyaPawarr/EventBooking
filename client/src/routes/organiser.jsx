@@ -10,10 +10,9 @@ import axios from "axios";
 const Organiser= ()=>{
 
 
-    const [data,userData] = useState({});
+    const [data,userData] = useState([]);
     const uid = useParams();
 
-    console.log(uid.id);
     const [select, setSelect]= useState([true, false]);
     const clickHandler=() =>{
         setSelect([!select[0], !select[1]]);
@@ -33,17 +32,6 @@ const Organiser= ()=>{
         }).catch(err => console.log(err))
     },[])
 
-
-    const data={
-        name: "Event Name",
-        host: "Host Name",
-        time: "Time",
-        seats: "Seats",
-        location: "Location",
-        cost: "Cost",
-        description:"Description"
-    }
-
     return(
         <div className="h-screen">
             <Nav />
@@ -59,7 +47,15 @@ const Organiser= ()=>{
                         </Link>
                     </div>
                     <section className="px-10 pb-10 w-full flex flex-col gap-5">
-                        <Event name={data.name} des={data.description} time={data.time} location={data.location}/>
+                        {data.length>0? 
+                        data.map( (d)=> {
+                            return(<Event name={d.name} des={d.description} time={d.time} location={d.location}/>)
+                        }):
+                            <div className="flex flex-col justify-center items-center gap-2">
+                                <h1 className="text-5xl font-bold roboto">No Events</h1>
+                                <p className="text-2xl">Create an event to get started</p>
+                            </div>
+                        }
                     </section>
                 </section>
                 <section id="footer">
