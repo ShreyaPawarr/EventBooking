@@ -49,7 +49,7 @@ const Organiser= ()=>{
                     <section className="px-10 pb-10 w-full flex flex-col gap-5">
                         {data.length>0? 
                         data.map( (d)=> {
-                            return(<Event name={d.name} des={d.description} time={d.time} location={d.location}/>)
+                            return(<Event key={d._id} id={d._id} name={d.name} des={d.description} time={d.time} location={d.location}/>)
                         }):
                             <div className="flex flex-col justify-center items-center gap-2">
                                 <h1 className="text-5xl font-bold roboto">No Events</h1>
