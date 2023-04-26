@@ -25,6 +25,7 @@ export default class EventManager{
                 let newManager = new Manager(this);
                 return newManager.save()
                 .then(result => {
+                    console.log(result);
                     return {exists:false,saved:true,id:result._id,organisation:result.organisation}
                 })
                 .catch(err => {
@@ -40,8 +41,11 @@ export default class EventManager{
     static async validate(manager){
         return Manager.findOne(manager)
         .then(result => {
-            if(result != undefined)
+            if(result != undefined){
+                console.log(result);
                 return {exists:true,id:result._id,organisation:result.organisation}
+            }
+                
         
             return {exists:true};
         })
