@@ -3,7 +3,7 @@ import EventManager from "../model/eventManager.js";
 
 const router = express.Router();
 
-router.get("/validate",(req,res) => {
+router.get("/validate/manager",(req,res) => {
     let manager = req.body;
 
     EventManager.validate(manager)

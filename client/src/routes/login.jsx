@@ -1,10 +1,13 @@
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import Button from "./Components/Button";
 import { useState } from "react";
 
 const LoginOrg= ()=>{
+
+    const navigate = useNavigate();
 
     const [organiser, setOrganiser]= useState(
         {
@@ -21,6 +24,20 @@ const LoginOrg= ()=>{
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const client = axios.create({
+            baseURL: "http://localhost:3000/"
+        })
+        client.get('validate/manager',
+        organiser
+        ).then(result => {
+            if(result.data.exists == true){
+                console.log(result.data);
+                navigate("/organiser/"+result.data.id);
+            }
+                
+            else
+                navigate("/signup");
+        })
         console.log(organiser);
     }
 
