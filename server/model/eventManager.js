@@ -20,12 +20,12 @@ export default class EventManager{
         return Manager.findOne(this)
         .then(result => {
             if(result){
-                return {exists:true,id:result._id}
+                return {exists:true,id:result._id,organisation:result.organisation}
             }else{
                 let newManager = new Manager(this);
                 return newManager.save()
                 .then(result => {
-                    return {exists:false,saved:true,id:result._id}
+                    return {exists:false,saved:true,id:result._id,organisation:result.organisation}
                 })
                 .catch(err => {
                     return {exists:false,saved:false};
@@ -41,7 +41,7 @@ export default class EventManager{
         return Manager.findOne(manager)
         .then(result => {
             if(result != undefined)
-                return {exists:true,id:result._id}
+                return {exists:true,id:result._id,organisation:result.organisation}
         
             return {exists:true};
         })
