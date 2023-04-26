@@ -16,7 +16,7 @@ const SignUp=() =>{
     })
 
     const handleInput = (e) => {
-        setManager((prev) => {
+        setManager((prev) => {3
             return {...prev,[e.target.name]:e.target.value};
         })
     }
@@ -33,7 +33,7 @@ const SignUp=() =>{
         .then((result) => {
             console.log(result.data);
             if(result.data.saved == true || result.data.exists==true)
-                router('/organiser');
+                router('/organiser/'+result.id);
         }).catch(err => {
             console.log(err);
         })

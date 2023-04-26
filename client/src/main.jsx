@@ -43,7 +43,7 @@ const router = createBrowserRouter([
     element: <SignupUser />,
   },
   {
-    path: "organiser",
+    path: "organiser/:id",
     element: <Organiser />,
   },
   {

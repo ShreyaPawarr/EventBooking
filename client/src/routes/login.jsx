@@ -2,8 +2,28 @@ import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 import { Link } from "react-router-dom";
 import Button from "./Components/Button";
+import { useState } from "react";
 
 const LoginOrg= ()=>{
+
+    const [organiser, setOrganiser]= useState(
+        {
+            email:"",
+            password:""
+        }
+    );
+
+    const handleChange = (e) => {
+        setOrganiser((prev) => {
+            return {...prev,[e.target.name]:e.target.value};
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(organiser);
+    }
+
     return(
         <div>
             <Nav />
@@ -17,15 +37,15 @@ const LoginOrg= ()=>{
                         <form className="flex flex-col gap-6">
                             <div className="flex flex-col justify-center items-start gap-2">
                                 <label className="text-2xl" htmlFor="email">Email</label>
-                                <input className="w-full border-2 border-black px-4 py-2 rounded-full focus:border-[#4DC4A4]" type="email" name="email" id="email" placeholder="Enter your email"/>
+                                <input className="w-full border-2 border-black px-4 py-2 rounded-full focus:border-[#4DC4A4]" type="email" name="email" id="email" onChange={handleChange} placeholder="Enter your email"/>
                             </div>
                             <div className="flex flex-col justify-center items-start gap-2">
                                 <label className="text-2xl" htmlFor="password">Password</label>
-                                <input className="w-full border-2 border-black px-4 py-2 rounded-full focus:border-[#4DC4A4]" type="password" name="password" id="password" placeholder="Enter your password"/>
+                                <input className="w-full border-2 border-black px-4 py-2 rounded-full focus:border-[#4DC4A4]" type="password" name="password" id="password" onChange={handleChange} placeholder="Enter your password"/>
                                 <h3 className="text-[#4DC4A4]">Forgot Password?</h3>
                             </div>
                             <div className="flex flex-col gap-2 w-full">
-                                <Link to="/organiser"><Button text="Login as Organiser" size="text-xl"/></Link>
+                                <Link to="/organiser"><Button onClick={handleSubmit} text="Login as Organiser" size="text-xl"/></Link>
                                 <h3 className="self-center">Don't have an account? <Link to="/signup"><span className="text-[#4DC4A4]">Click Here</span></Link></h3>
                             </div>
                         </form>
