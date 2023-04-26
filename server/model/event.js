@@ -2,9 +2,11 @@ import mongoose from "../db.js";
 
 const EventSchema = new mongoose.Schema({
     "name":String,
+    "host":String,
     "time":Date,
     "seats":Number,
-    "host":String,
+    "hostId":String,
+    "location":String,
     "cost":Number,
     "description":String
 })
@@ -12,11 +14,12 @@ const EventSchema = new mongoose.Schema({
 export const EventCollections = mongoose.model("events",EventSchema);
 
 export default class Event{
-    constructor({name,time,seats,host,cost,description}){
+    constructor({name,time,seats,host,location,cost,description}){
         this.name = name;
+        this.host = host;
         this.time = time;
         this.seats = seats;
-        this.host = host;
+        this.location = location;
         this.cost = cost;
         this.description = description;
     }
