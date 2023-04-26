@@ -14,11 +14,12 @@ const EventSchema = new mongoose.Schema({
 export const EventCollections = mongoose.model("events",EventSchema);
 
 export default class Event{
-    constructor({name,time,seats,host,location,cost,description}){
+    constructor({name,host,time,seats,hostId,location,cost,description}){
         this.name = name;
         this.host = host;
         this.time = time;
         this.seats = seats;
+        this.hostId = hostId;
         this.location = location;
         this.cost = cost;
         this.description = description;
