@@ -1,9 +1,19 @@
 import { Link, useParams } from "react-router-dom";
 import Button from "./Button";
+import axios from "axios";
 
 const Event=(props) =>{
 
-    const uid= useParams();
+    const handleDelete = () => {
+        const client = axios.create({
+            baseURL:"http://localhost:3000"
+        })
+        client.delete("event/"+props.id)
+        .then((result) =>{
+            window.location.reload();
+        })
+        .catch(err => console.log(err))
+    }
 
     return(
         <div className="flex flex-row w-full p-5 bg-slate-100 rounded-lg gap-8">
@@ -26,8 +36,8 @@ const Event=(props) =>{
                         <h3 className="text-lg font-medium">{props.location}</h3>
                     </div>
                     <div className="flex gap-2">
-                        <Link to={"/addEvent/:"+uid.id}><Button text="Modify" size="text-xl" type="outline"/></Link>
-                        <Button text="Delete" size="text-xl" type="outline"/>
+                        <Link to={"/addEvent/:"+props.id}><Button text="Modify" size="text-xl" type="outline"/></Link>
+                        <Button text="Delete" size="text-xl" type="outline" onClick={handleDelete}/>
                     </div>
                 </div>
             </div>
