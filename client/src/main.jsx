@@ -47,7 +47,7 @@ const router = createBrowserRouter([
     element: <Organiser />,
   },
   {
-    path: "addevent",
+    path: "addevent/:id",
     element: <AddEvent />,
   },
 ]);

@@ -4,10 +4,13 @@ import Footer from "./Components/Footer";
 import Tab from "./Components/Tab";
 import Event from "./Components/Event";
 import { useState } from "react";
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
 const Organiser= ()=>{
 
+    const uid = useParams();
+
+    console.log(uid.id);
     const [select, setSelect]= useState([true, false]);
     const clickHandler=() =>{
         setSelect([!select[0], !select[1]]);
@@ -22,7 +25,7 @@ const Organiser= ()=>{
                         <Tab text="Upcoming Events" selected={select[0]} onClick={clickHandler}/>
                         <Tab text="Past Events" selected={select[1]} onClick={clickHandler}/>
                     </div>
-                    <Link to="/addevent">
+                    <Link to={"/addevent/"+uid.id}>
                         <Button text="New Event" size="text-xl" rounded="rounded-md"/>
                     </Link>
                 </div>
