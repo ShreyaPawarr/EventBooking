@@ -31,8 +31,9 @@ const SignUp=() =>{
         manager
         )
         .then((result) => {
-            console.log(result);
-            // router('/organiser');
+            console.log(result.data);
+            if(result.data.saved == true || result.data.exists==true)
+                router('/organiser');
         }).catch(err => {
             console.log(err);
         })
