@@ -21,12 +21,12 @@ const Footer=() =>{
                     </div>
                     <div className="flex flex-col gap-1">
                         <h2 className="text-lg font-medium">Kunal Dureja</h2>
-                        <p>(102003046)</p>
+                        <p>(102003061)</p>
                         <p>Backend Developer</p>
                     </div>
                     <div className="flex flex-col gap-1">
                         <h2 className="text-lg font-medium">Shreya Pawar</h2>
-                        <p>(102003046)</p>
+                        <p>(102003108)</p>
                         <p>UI Designer</p>
                     </div>
                 </div>
