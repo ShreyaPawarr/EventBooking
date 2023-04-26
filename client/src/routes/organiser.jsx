@@ -3,11 +3,14 @@ import Button from "./Components/Button";
 import Footer from "./Components/Footer";
 import Tab from "./Components/Tab";
 import Event from "./Components/Event";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Link, useParams} from 'react-router-dom';
+import axios from "axios";
 
 const Organiser= ()=>{
 
+
+    const [data,userData] = useState({});
     const uid = useParams();
 
     console.log(uid.id);
@@ -15,6 +18,21 @@ const Organiser= ()=>{
     const clickHandler=() =>{
         setSelect([!select[0], !select[1]]);
     }
+    const client = axios.create({
+        baseURL: "http://localhost:3000/"
+    })
+    useEffect(() => {
+    
+        client.get("manager/events/"+uid.id)
+        .then(result => {
+           return result.data;
+        })
+        .then(data => {
+            console.log(data);
+            userData(data);
+        }).catch(err => console.log(err))
+    },[])
+
 
     const data={
         name: "Event Name",

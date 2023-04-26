@@ -89,7 +89,7 @@ export default class Event{
     }
 
     static async getEventsManager(id){
-        return EventCollections.find({host:id})
+        return EventCollections.find({hostId:id})
         .then(
             result => {
                 console.log(result);

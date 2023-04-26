@@ -49,7 +49,7 @@ const AddEvent=() =>{
                 <div className="flex flex-col justify-center items-center w-2/3">
                         <div className="form flex flex-col bg-slate-200 gap-8 p-10 rounded-xl">
                             <div className="flex flex-col gap-1 justify-center items-center">
-                                <h1 className="text-5xl font-bold roboto">Let's Create an Event</h1>
+                                <h1 className="text-5xl font-bold roboto">Let&apos;s Create an Event</h1>
                             </div>
                             <form className="flex flex-col gap-4">
                                 <div className="flex flex-col justify-center items-start gap-2">
