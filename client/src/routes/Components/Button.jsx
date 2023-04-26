@@ -20,7 +20,7 @@ const Button = (props) =>{
     }
     buttonStyle=buttonStyle + " " +props.size;
     return (
-        <button className={buttonStyle}>{props.text}</button>
+        <button className={buttonStyle} onClick={props.onClick}>{props.text}</button>
     )
 }
 

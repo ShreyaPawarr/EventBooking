@@ -1,8 +1,7 @@
 import mongoose from "../db.js";
 
 const ManagerSchema = new mongoose.Schema({
-    name:String,
-    age:Number,
+    organisation:String,
     email:String,
     password:String
 })
@@ -11,9 +10,8 @@ const Manager = mongoose.model('managers',ManagerSchema);
 
 
 export default class EventManager{
-    constructor({name,age,email,password}){
-        this.name = name;
-        this.age = age,
+    constructor({organisation,email,password}){
+        this.organisation = organisation;
         this.email = email,
         this.password = password
     }
